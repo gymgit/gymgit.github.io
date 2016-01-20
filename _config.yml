@@ -1,0 +1,105 @@
+title:            GyM's Personal Blog
+description:      This is a cyber security related personal blog.
+disqus_shortname: gmiru # put your disqus here
+reading_time:     false # if true, shows the estimated reading time for a post
+words_per_minute: 200
+logo:             images/logo.png # logo visible in the topbar
+# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
+# When testing locally leave blank or use http://localhost:4000
+url: http://localhost:4000
+#url: http://gmiru.com
+
+# draw your top menu here
+# each item must have a title and a url.
+#   To list post categories. use type: 'categories'
+#   To create sub categories. add a submenu item
+# See the example
+menu:
+  - title: 'Home'
+    url: '/'
+  - title: 'Tags'
+    url: '/tags'
+  - title: 'Categories'
+    url: '/categories'
+    type: 'categories'
+  - title: 'About'
+    url: '/about'
+#  - title: 'Favorites'
+#    url: '#'
+#    submenu:
+#      - title: 'Code Highlighter'
+#        url: '/intro/code-highlighting-post/'
+#      - title: 'Sample Post'
+#        url: '/intro/sample-post/'
+
+# Owner/author information
+owner:
+  name:           Gyorgy Miru
+  site:           http://gmiru.com/about
+  avatar:         images/avatar.jpg
+  bio:            "ICS cyber security researcher who also plays CTFs regularly in the team !SpamAndHex. I am currently a masters student in Computer Engineering and working at Crysys Lab."
+  email:          mirugy@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter: gymiru # if no twitter in this config, the twitter follow button will be removed
+  facebook:
+  github: gymgit
+  stackexchange:
+  linkedin: gymiru
+  instagram:
+  flickr:
+  tumblr:
+  # google plus id, include the '+', eg +AronBordin
+  google_plus:
+
+social:
+  - title: "github"
+    url: "https://github.com/gymgit"
+  - title: "linkedin"
+    url: "https://br.linkedin.com/in/gymiru"
+#  - title: "youtube"
+#   url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
+# Background image to be tiled on all pages
+background:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Europe/Budapest
+future:      true
+highlighter: pygments
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+# if true, shows the floatting share buttons
+float_share: false
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
