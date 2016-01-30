@@ -1,0 +1,25 @@
+.begin dformat
+style bitwid 0.5
+style linethrutext 0
+Item Normal
+	1--1 Spec Type
+	1--1 Length
+	1--1 Syntax ID
+	1--1 Variable Type
+	2--2 Count
+	2--2 DB Number
+	1--1 Area
+	3--3 Address
+Item S400
+	1--1 Spec Type
+	1--1 Length
+	1--1 Syntax ID
+	1--1 Number of Areas
+ A1: --5-dashed Subitem
+Subitem
+ A2: 1--1 Size
+ 	2--2 DB Number
+ A3: 2--2 Address	
+pic line dotted from A1.sw to A2.nw
+pic line dotted from A1.se to A3.ne
+.end

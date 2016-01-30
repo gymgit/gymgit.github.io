@@ -1,0 +1,13 @@
+.begin dformat
+style bitwid 0.5
+style linethrutext 0
+S7 Header
+        1 Protocol ID
+        1 MSG Type
+        2 Reserved
+		2 PDU Ref
+		2 Param Length
+		2 Data Length
+		1--1-dashed Error Class
+		1--1-dashed Error Code
+.end
