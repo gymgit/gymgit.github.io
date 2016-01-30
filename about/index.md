@@ -40,7 +40,7 @@ Crysys Lab:
 
 * Siemens S7-300/ET 200S honeypot development
 * Design and implementation of undetectable unkillable log parser inside the Linux kernel
-* Desing and implementation of IDS for ICS based on Bro
+* Design and implementation of IDS for ICS based on Bro
 
 [Evopro Systems Engineering](http://www.evopro.hu/eng):
 
@@ -50,4 +50,4 @@ Crysys Lab:
 
 ##Publications
 
-*Buza, D. I., Juhász, F., Miru, G., Félegyházi, M., & Holczer, T. (2014). CryPLH: Protecting smart energy systems from targeted attacks with a PLC honeypot. In Smart Grid Security (pp. 181-192). Springer International Publishing.
+* Buza, D. I., Juhász, F., Miru, G., Félegyházi, M., & Holczer, T. (2014). CryPLH: Protecting smart energy systems from targeted attacks with a PLC honeypot. In Smart Grid Security (pp. 181-192). Springer International Publishing.
