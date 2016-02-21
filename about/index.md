@@ -5,7 +5,7 @@ description: "Introduction and Contact"
 comments: false
 share: false
 ---
-#Gyorgy Miru
+# Gyorgy Miru
 <div class="author-container">
       <img class="author-img" src="{{site.url}}/{{site.owner.avatar}}" alt="{{site.owner.name}}" />
       <div class="author-contact">
@@ -28,13 +28,13 @@ share: false
 
 </div>
 
-##Bio
+## Bio
 
 I am a Computer Engineering masters student at the Budapest University of Technology and Economics and work as an ICS security researcher at [Crysys Lab](https://www.crysys.hu/).
 
 In my free time I regularly play CTFs in the [Crysys Student Core](http://core.crysys.hu/)'s team !SpamAndHex.
 
-##Previous Work Experience
+## Previous Work Experience
 
 Crysys Lab:
 
@@ -48,6 +48,6 @@ Crysys Lab:
 * HMI software development
 * SCADA software PLC communication interface development
 
-##Publications
+## Publications
 
 * Buza, D. I., Juhász, F., Miru, G., Félegyházi, M., & Holczer, T. (2014). CryPLH: Protecting smart energy systems from targeted attacks with a PLC honeypot. In Smart Grid Security (pp. 181-192). Springer International Publishing.
