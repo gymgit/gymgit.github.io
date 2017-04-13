@@ -37,7 +37,7 @@ owner:
   name:           Gyorgy Miru
   site:           http://gmiru.com/about
   avatar:         images/avatar.jpg
-  bio:            "ICS cyber security researcher who also plays CTFs regularly in the team !SpamAndHex. I am currently a masters student in Computer Engineering and working at Crysys Lab."
+  bio:            "Embedded security researcher who also plays CTFs regularly in the team !SpamAndHex. Currently employed by ENCS UA to test Smart Meters."
   email:          mirugy@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter: gymiru # if no twitter in this config, the twitter follow button will be removed
@@ -72,8 +72,8 @@ timezone:    Europe/Budapest
 future:      true
 highlighter: rouge
 markdown:    kramdown
-gems:
-  - jekyll-sitemap
+# gems:
+#   - jekyll-sitemap
 sass:
   sass_dir: _sass
   style: compressed
@@ -86,20 +86,34 @@ paginate: 5
 
 # if true, shows the floatting share buttons
 float_share: false
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: true
-
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+# Octopress
+# Default extensions
+post_ext: md
+page_ext: md
+# Found in _templates/
+post_layout: post
+page_layout: page
+# Format titles with titlecase?
+titlecase: true
 
 include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+gems: [jekyll-paginate]
+theme: neo-hpstr-jekyll-theme
+
+# kramdown:
+#   auto_ids: true
+#   footnote_nr: 1
+#   entity_output: as_char
+#   toc_levels: 1..6
+#   use_coderay: true
+#
+#   coderay:
+#     coderay_line_numbers: nil
+#     coderay_line_numbers_start: 1
+#     coderay_tab_width: 4
+#     coderay_bold_every: 10
+#     coderay_css: class
+#
+# include: [".htaccess"]
+# exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
