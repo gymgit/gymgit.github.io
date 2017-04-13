@@ -1,0 +1,5 @@
+fixed _sass/_rouge.scss (little touch ups)
+_layouts/posts.html authors bio removed
+main pages use post-index.html instead of home (just naming)
+they are organized into subdirs instead of pagename_html
+_includes/head.html contains code for analytics
