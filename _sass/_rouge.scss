@@ -1,19 +1,55 @@
 .highlight {
-	// margin-bottom: 1.5em;
-	// @include font(12);
+	margin-bottom: 1.5em;
+	//@include font(12);
+    font-size: 12px;
     // TODO fix inner pad + numbers
     // https://alexpeattie.com/blog/better-syntax-highlighting-with-rouge
     // https://github.com/aahan/pygments-github-style/blob/master/jekyll-github.css
 	color: #d0d0d0;
 	border: 1px solid darken($body-color, 10);
 	background-color: #272822;
-	// @include rounded(3px); 
+	@include rounded(3px);
+    padding: 8px 15px;
 	pre {
 		position: relative;
 		margin: 0;
-		padding: 1em; 
-	}
-	.lineno { padding-right: 24px; color: #8f908a;}
+		//padding: 1em;
+        padding: 0;
+        white-space: pre;
+        overflow-x: auto;
+        word-break: inherit;
+        word-wrap: inherit;
+
+    }
+    // .code pre {
+	// 	position: relative;
+	// 	margin: 0;
+	// 	//padding: 1em;
+    //     padding: 0;
+    //     white-space: pre;
+    //     overflow-x: auto;
+    //     width: 100%;
+    //     word-break: inherit;
+    //     word-wrap: inherit;
+	// }
+    //td { padding: 6px 6px;}
+    //.code{ overflow-x: auto; }
+
+	//.lineno { padding-right: 24px; color: #8f908a;}
+	.lineno { color: #8f908a;}
+    //line nums
+    .gl { 
+    //  background: #fafafa;
+    //  border-right: 1px solid #ddd;
+    //  color: #999;
+      
+      //-webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 	.hll { background-color: #49483e }
 	.c { color: #75715e } /* Comment */
 	.err { color: #960050; background-color: #1e0010 } /* Error */
