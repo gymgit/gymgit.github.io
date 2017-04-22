@@ -1,5 +1,5 @@
 title:            GyM's Personal Blog
-description:      This is a cyber security related personal blog.
+description:      This is a computer security related personal blog focusing mostly on embedded security.
 disqus_shortname: gmiru # put your disqus here
 reading_time:     false # if true, shows the estimated reading time for a post
 words_per_minute: 200
