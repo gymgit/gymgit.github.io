@@ -1,0 +1,18 @@
+.begin dformat
+style bitwid 0.5
+style linethrutext 0
+Request Item
+	1--1 Spec Type
+	1--1 Length
+	1--1 Syntax ID
+	1--1 Variable Type
+	2--2 Count
+	2--2 DB Number
+	1--1 Area
+	3--3 Address
+Data Item
+    1--1 Error Code
+    1--1 Variable Type
+    2--2 Count
+    --4 Data
+.end

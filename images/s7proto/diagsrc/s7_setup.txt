@@ -1,0 +1,11 @@
+.begin dformat
+style bitwid 0.5
+style linethrutext 0
+Setup Comm
+        10 S7 Header
+        1 Function Code (0xf0)
+        1 Reserved
+		2 Max AMQ Caller
+		2 Max AMQ Callee
+		2 PDU Length
+.end

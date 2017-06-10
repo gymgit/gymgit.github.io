@@ -1,0 +1,29 @@
+.begin dformat
+style bitwid 0.5
+style linethrutext 0
+Request Item
+	1--1 Spec Type
+	1--1 Length
+	1--1 Syntax ID
+	1--1 Number of Subitems
+ A1: --5-dashed Subitem
+Subitem
+ A2: 1--1 Size
+ 	2--2 DB Number
+ A3: 2--2 Address
+
+Data Item
+    1--1 Error Code
+    1--1 Variable Type
+    2--2 Length
+ A4: --5-dashed Subresponse
+
+Subresponse
+ A5: 1--1 Error Code
+ A6: --4 Data
+
+pic line dotted from A1.sw to A2.nw
+pic line dotted from A1.se to A3.ne
+pic line dotted from A4.sw to A5.nw
+pic line dotted from A4.se to A6.ne
+.end

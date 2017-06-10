@@ -1,4 +1,12 @@
-#Most of this is extracted from s7comm wireshark dissector sources
+##
+# Most of this is extracted from s7comm 
+# wireshark dissector plugin sources 
+# created by Thomas Wiens <th.wiens[AT]gmx.de>
+# Date: 2016-15-03
+# Author: Gyorgy Miru
+# Version: 0.2
+##
+
 #Protocol ID:
 0x32 - Protocol ID
 
@@ -120,13 +128,13 @@
 0x09 - OCTET STRING
 
 #Block type constants
-'8' - OB
-'A' - DB
-'B' - SDB
-'C' - FC
-'D' - SFC
-'E' - FB
-'F' - SFB
+'08' - OB
+'0A' - DB
+'0B' - SDB
+'0C' - FC
+'0D' - SFC
+'0E' - FB
+'0F' - SFB
 
 #Sub block types
 0x08 - OB

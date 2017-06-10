@@ -1,0 +1,124 @@
+the siemens S7 protocol
+
+S7 packet structure:
+TPKT: 4b
+ISO-COTP: 3b
+S7PDU
+iso over tcp: RFC1006, RFC2126 iso-cotp is based on ISO 8073 which is available as RFC905
+
+The S7PDU:
+Header-Parameter-Data
+
+Header:
+protocol id: 0x32
+ROSCTR (message type):
+	0x01: Job - request respone
+	0x02: Ack - Sent by slave (to job requests) no additonal fields
+	0x03: Ack Data - Sent by slave, with additional data field
+	0x07: Userdata - debugging, programming, management 
+Reserved: 0x0000
+PDU reference: 2b - always incremented, connects requests and responses, LSB first
+Param length: 2b - parameter field length, MSB first
+Data length: 2b - data field length, MSB first
+(only in Ack Data, Ack?) Error class: 0x00 - error class - see Constants/ Header error codes
+(only in Ack Data, Ack?) Error code: 0x00 - further specifies the error
+
+
+Parameter:
+The structure of this field depends on the message type
+
+Job and Ack Data parameter header:
+message function: 1b - the function code of the message the rest of the Parameter field depends on this
+	0x00: CPU services:
+	
+	0xf0: Setup communication: 
+		Job and Ack data contains the same fields, data length 0
+		reserved: 0x00 
+		Max ack queue : 0x0002 - 2b the number of parellel jobs that needs to be acked on the calling side
+		Max ack queue : 0x0002 - 2b the number of parellel jobs that needs to be acked on the called side
+		PDU length: 0x01e0 - 2b max length of the PDU, MSB first
+	0x04/0x05: Read/Write variable
+		Item count: 1b  - the number of items contained in the request 
+		-note in the Job PDU the "item" structure is detailed in the parameter field, however the data linked to the item is in Data field (Write request or Ack Data)
+		-the Item structure will be explained later
+        -Item address (var spec) - in parameters
+            variable spec: 1b - 0x12
+            length of address spec 1b - the rest
+            syntax ID 1b - S7ANY 0x10
+            transport size 1b - variable size (type)
+            length 2b (big endian) - 
+            db number 2b (big endian) - the db number
+            address 3b (big endian) - the number of bits even when reading bytes
+        -Item address (db read) - in parameters
+            variable spec: 1b - 0x12
+            length of address spec 1b - the rest
+            syntax ID 1b - DBREAD 0xb0
+            number of subitems 1b - the number of following subitems
+            -Subitem:
+                bytes to read 1b
+                db number 2b (big endian)
+                start address 2b (big endian)
+
+        -Item data - in data 
+            -reply var spec
+                same as write data
+            -reply db read
+                return code 1b: 0x00
+                transport size 1b - variable type
+                length 2b (be)
+                -subitems:
+                    return code 1b:
+                    data (depends on the querried length)
+
+            -reply write
+                return val 1b - the error code
+                [fill byte - 0x00 must be even]
+            - write data
+                return code 1b: 0x00
+                transport size 1b - variable type
+                length 2b (be)
+                data - the written data that depends on the type
+                [fill byte - 0x00 must be even]
+
+	0x1a: Request Download
+	0x1b: Download Block
+	0x1c: Download Ended
+        - pg->plc request download
+	0x1d: Start Upload
+	0x1e: Upload
+	0x1f: End Upload
+	0x28: PLC Control
+        see _INSE : activate block download OB1
+	0x29: PLC Stop
+	
+Userdata parameter header:
+	param head: 3b - always 0x000112
+	parameter length: 1b - 4/8 request/responses
+	unknown(Master/Slave): 1b - 0x11 in case of response 0x12 in case of response
+	Req/Resp+function group: 1b - 1st octet: 4 Request/1 Response/0 Push - 2nd octet: message function
+		o1: Programming commands - used to debug/ program the device read diag data, vartabs, force tables
+		o2: Cyclic Data read - only available on S400 series PLCs
+		o3: Block operations
+		o4: CPU functions
+		o5: Security functions - authenticate to PLC
+		o6: Unknown
+		o7: Time functions
+	Subfunctions: 1b - further specifies message function code - see Userdata subfunction codes
+	Sequence number: 1b - not really a sequence num. not sure how it actually works
+	In Push and Response type messages following fields are also present:
+	Data unit reference number: 1b - starts with 0x00 incremented with each PDU segment if data is too long
+	Last Data Unit: 1b -  0x00 Yes 0x0 No
+	Error Code: 2b - see Userdata Parameter Error Codes for the valid constants
+		
+### Constants ###
+Header Error Codes:
+	0x00: No error
+	0x81: Application relationship
+	0x82: Object definition
+	0x83: No resource available
+	0x84: Error on service processing
+	0x85: Error on supplies
+	0x86: Unknown
+	0x87: Access error
+Userdata Subfunction codes:
+Userdata Parameter Error Codes:

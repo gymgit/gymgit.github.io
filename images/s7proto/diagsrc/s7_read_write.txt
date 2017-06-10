@@ -1,0 +1,14 @@
+.EQ
+.EN
+.begin dformat
+style bitwid 0.08
+style charwid 0
+style recspread 0.3
+style linethrutext 0
+R/W Parameters
+        1--8 Function
+        1--8 Item Count
+        --16 Item 1
+        --16-dashed ...
+        --16-dashed Item N
+.end
