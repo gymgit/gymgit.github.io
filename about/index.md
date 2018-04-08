@@ -28,13 +28,20 @@ share: false
 
 ## Previous Work Experience
 
+Verint:
+
+* Vulnerability research
+
 ENCS UA:
 
-* Security testing Smart Meters and other embedded devices
+* Vulnerability assessment of Smart Meters and other embedded devices
+* Penetration testing of SCADA and Head End systems
+* Providing lectures and seminars on ICS Security related topic
 
 Comsecuris UG:
 
 * Mobile security research, escalating code execution from baseband to application processor
+* Results are published [here](https://comsecuris.com/blog/posts/path_of_least_resistance/)
 
 Crysys Lab:
 
@@ -52,3 +59,5 @@ Crysys Lab:
 
 * Buza, D. I., Juhász, F., Miru, G., Félegyházi, M., & Holczer, T. (2014). CryPLH: Protecting smart energy systems from targeted attacks with a PLC honeypot. In Smart Grid Security (pp. 181-192). Springer International Publishing.
 * Holczer, Tamás, András Gazdag, and György Miru. "Intrusion Detection in Cyber Physical Systems Based on Process Modelling." ECCWS2016-Proceedings fo the 15th European Conference on Cyber Warfare and Security. Academic Conferences and publishing limited, 2016.
+* Gyorgy Miru, "Where are my tokens: a Linux kernel based hidden host monitoring framework for honeytokens", Mesterproba BME, 2016
+* Gyorgy Miru, "Path of Least Resistance: Cellular Baseband to Application Processor Escalation on Mediatek Devices", [Comsecuris Blog](https://comsecuris.com/blog/posts/path_of_least_resistance/), 2017

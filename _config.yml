@@ -37,7 +37,7 @@ owner:
   name:           Gyorgy Miru
   site:           http://gmiru.com/about
   avatar:         images/avatar.jpg
-  bio:            "Embedded security researcher who also plays CTFs regularly in the team !SpamAndHex. Currently employed by ENCS UA to test Smart Meters."
+  bio:            "Embedded security researcher and regular CTF player as a member of !SpamAndHex"
   email:          mirugy@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter: gymiru # if no twitter in this config, the twitter follow button will be removed
